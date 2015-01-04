@@ -1,0 +1,23 @@
+{
+    "name": "croads/easy-serializer",
+    "description": "Serialize things easily, with validation support.",
+    "require": {
+        "crodas/notoj": "~0.1",
+        "crodas/simple-view-engine": "~0.1",
+        "crodas/validator": "~0.1",
+        "crodas/file-util": "~0.1",
+        "crodas/watch-files": ">=0.1.6"
+    },
+    "authors": [
+        {
+            "name": "César D. Rodas",
+            "email": "crodas@php.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "EasySerializer": "lib/"
+        }
+    },
+    "minimum-stability": "dev"
+}
