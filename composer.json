@@ -1,5 +1,5 @@
 {
-    "name": "croads/easy-serializer",
+    "name": "crodas/easy-serializer",
     "description": "Serialize things easily, with validation support.",
     "require": {
         "crodas/notoj": "~0.1",
