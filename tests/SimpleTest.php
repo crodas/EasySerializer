@@ -35,12 +35,15 @@ class SimpleTest extends \phpunit_framework_testcase
 
     public function testJsonDeserialize()
     {
-        $array = ['name' => uniqid(true), 'age' => rand(19, 98), 'obj' => ['name' => uniqid(True)]];
+        $data = hex2bin(uniqid(true));
+        $array = ['name' => uniqid(true), 'age' => rand(19, 98), 'obj' => ['name' => uniqid(True)], 'binary' => base64_encode($data)];
         $json  = json_encode($array);
         $serializer = getSerializer();
         $obj = $serializer->deserialize($json, 'Something');
         $this->assertEquals($obj->name, $array['name']);
         $this->assertEquals($obj->age, $array['age']);
+        $this->assertEquals($obj->binary, $data);
+        $this->assertEquals($obj->binary, base64_decode($array['binary']));
         $this->assertTrue($obj->obj instanceof SomethingElse);
         $this->assertEquals($obj->obj->name, $array['obj']['name']);
     }

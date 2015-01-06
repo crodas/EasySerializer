@@ -95,6 +95,12 @@ class Serializer
                         throw new \EasySerializer\Exception\Validation({{@$class}}, {{@$prop['property']}});
                     }
                 @end
+                /**
+                  {{@$prop}}
+                */
+                @if ($prop->hasAnnotation('Base64')) 
+                    $array[{{@$prop['property']}}] = base64_decode($array[{{@$prop['property']}}]);
+                @end
                 @if (in_array('public', $prop->getMetadata()['visibility']))
                     $object->{{$prop['property']}} = $array[{{@$prop['property']}}];
                 @else

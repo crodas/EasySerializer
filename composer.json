@@ -2,10 +2,10 @@
     "name": "crodas/easy-serializer",
     "description": "Serialize things easily, with validation support.",
     "require": {
-        "crodas/notoj": "~0.1",
-        "crodas/simple-view-engine": "~0.1",
-        "crodas/validator": "~0.1",
-        "crodas/file-util": "~0.1",
+        "crodas/notoj": "0.1.22",
+        "crodas/validator": "0.1.6",
+        "crodas/file-util": "0.1.16",
+        "crodas/simple-view-engine": ">=0.1.34",
         "crodas/watch-files": ">=0.1.6"
     },
     "authors": [

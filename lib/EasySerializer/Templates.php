@@ -8,8 +8,8 @@
 namespace {
 
 
-    $GLOBALS['file_54a9a40410b2b'] = array();
-    $GLOBALS['line_54a9a40410b2b'] = array();
+    $GLOBALS['file_54ab45ff6972f'] = array();
+    $GLOBALS['line_54ab45ff6972f'] = array();
 
     class base_template_b0d5524e6dece31451000574f8d7b9fa5cbb001f
     {
@@ -95,119 +95,119 @@ namespace {
 
         public function _render(Array $vars = array(), $return = false)
         {
-            global $file_54a9a40410b2b, $line_54a9a40410b2b;
+            global $file_54ab45ff6972f, $line_54ab45ff6972f;
             $this->context = $vars;
 
             extract($vars);
             if ($return) {
                 ob_start();
             }
-            $_54a9a40410b2b = array_push($file_54a9a40410b2b, 'Serializer.tpl') - 1;
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 1;
+            $_54ab45ff6972f = array_push($file_54ab45ff6972f, 'Serializer.tpl') - 1;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 1;
 
             echo "<?php\n\n";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 3;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 3;
             $ns = 'EasySerialize\\n' . uniqid(true);
             $this->context['ns'] = $ns;
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 4;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 4;
             echo "\nnamespace ";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 5;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 5;
             echo $ns . ";\n\nuse ";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 7;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 7;
             echo $validator->getNamespace() . " as v;\n\nfunction write_property(\$obj, \$property, \$value)\n{\n    \$ref = new \\ReflectionProperty(\$obj, \$property);\n    \$ref->setAccesible(true);\n    return \$ref->setValue(\$obj, \$value);\n}\n\nspl_autoload_register(function(\$class) {\n    switch(strtolower(\$class)) {\n";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 18;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 18;
             foreach($classes as $class => $obj) {
 
                 $this->context['class'] = $class;
                 $this->context['obj'] = $obj;
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 19;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 19;
                 echo "    case ";
                 var_export($class);
                 echo ":\n        require ";
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 20;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 20;
                 var_export($obj->getFile());
                 echo ";\n        return true;\n";
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 22;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 22;
             }
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 23;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 23;
             echo "    }\n\n    return false;\n});\n\nclass Serializer\n{\n    protected \$encoders = array(\n        'encode' => 'json_encode',\n        'decode' => 'json_decode',\n    );\n\n    public function setFunction(\$encode, \$decode)\n    {\n        foreach (['encode', 'decode'] as \$type) {\n            if (!is_callable(\$\$type)) {\n                throw new \\InvalidArgumentException(\"\$type is not callable\");\n            }\n        }\n        \$this->encoders = compact('encode', 'decode');\n    }\n\n    public function serialize(\$object, \$raw = false)\n    {\n        \$array = v\\get_object_properties(\$object);\n\n        switch (strtolower(get_class(\$object))) {\n";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 50;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 50;
             foreach($classes as $class => $obj) {
 
                 $this->context['class'] = $class;
                 $this->context['obj'] = $obj;
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 51;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 51;
                 echo "        case ";
                 var_export($class);
                 echo ":\n";
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 52;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 52;
                 foreach($obj->GetProperties() as $prop) {
 
                     $this->context['prop'] = $prop;
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 53;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 53;
                     if ($prop->has('Required')) {
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 54;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 54;
                         echo "                if (empty(\$array[";
                         var_export($prop['property']);
                         echo "])) {\n                    throw new \\EasySerializer\\Exception\\MissingProperty(";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 55;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 55;
                         var_export($class);
                         echo ", ";
                         var_export($prop['property']);
                         echo ");\n                }\n";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 57;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 57;
                     }
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 58;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 58;
                     if ($prop->has('Object')) {
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 59;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 59;
                         if ($prop->has('Required')) {
-                            $line_54a9a40410b2b[$_54a9a40410b2b] = 60;
+                            $line_54ab45ff6972f[$_54ab45ff6972f] = 60;
                             echo "                    else {\n";
-                            $line_54a9a40410b2b[$_54a9a40410b2b] = 61;
+                            $line_54ab45ff6972f[$_54ab45ff6972f] = 61;
                         }
                         else {
-                            $line_54a9a40410b2b[$_54a9a40410b2b] = 62;
+                            $line_54ab45ff6972f[$_54ab45ff6972f] = 62;
                             echo "                    if (!empty(\$array[";
                             var_export($prop['property']);
                             echo "])) {\n";
-                            $line_54a9a40410b2b[$_54a9a40410b2b] = 63;
+                            $line_54ab45ff6972f[$_54ab45ff6972f] = 63;
                         }
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 64;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 64;
                         echo "                        \$array[";
                         var_export($prop['property']);
                         echo "] = \$this->serialize(\$array[";
                         var_export($prop['property']);
                         echo "], true);\n                    }\n";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 66;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 66;
                     }
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 67;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 67;
                 }
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 68;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 68;
                 echo "            break;\n";
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 69;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 69;
             }
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 70;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 70;
             echo "        }\n        return  \$raw ? \$array : \$this->encoders['encode'](\$array);\n    }\n\n    public function deserialize(\$str, \$class)\n    {\n        \$array = (array)(is_scalar(\$str) ? \$this->encoders['decode'](\$str) : \$str);\n        if (is_object(\$class)) {\n            \$object = \$class;\n            \$class  = get_class(\$object);\n        } else {\n            \$object = new \$class;\n        }\n\n        switch (strtolower(\$class)) {\n";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 85;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 85;
             foreach($classes as $class => $obj) {
 
                 $this->context['class'] = $class;
                 $this->context['obj'] = $obj;
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 86;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 86;
                 echo "        case ";
                 var_export($class);
                 echo ":\n";
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 87;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 87;
                 foreach($obj->getProperties() as $prop) {
 
                     $this->context['prop'] = $prop;
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 88;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 88;
                     echo "                if (!empty(\$array[";
                     var_export($prop['property']);
                     echo "])) {\n";
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 89;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 89;
                     if ($prop->has('Object')) {
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 90;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 90;
                         echo "                    \$array[";
                         var_export($prop['property']);
                         echo "] = \$this->deserialize(\$array[";
@@ -215,68 +215,83 @@ namespace {
                         echo "], ";
                         var_export(current($prop->getOne('Object')));
                         echo ");\n";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 91;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 91;
                     }
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 92;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 92;
                     $val = strtolower($prop['class'] . "::" . $prop['property']);
                     $this->context['val'] = $val;
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 93;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 93;
                     if ($validator->hasRules($val)) {
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 94;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 94;
                         echo "                    if (v\\validate_" . (sha1($val)) . "(\$array[";
                         var_export($prop['property']);
                         echo "]) === false) {\n                        throw new \\EasySerializer\\Exception\\Validation(";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 95;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 95;
                         var_export($class);
                         echo ", ";
                         var_export($prop['property']);
                         echo ");\n                    }\n";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 97;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 97;
                     }
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 98;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 98;
+                    echo "                /**\n                  ";
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 99;
+                    var_export($prop);
+                    echo "\n                */\n";
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 101;
+                    if ($prop->hasAnnotation('Base64')) {
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 102;
+                        echo "                    \$array[";
+                        var_export($prop['property']);
+                        echo "] = base64_decode(\$array[";
+                        var_export($prop['property']);
+                        echo "]);\n";
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 103;
+                    }
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 104;
                     if (in_array('public', $prop->getMetadata()['visibility'])) {
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 99;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 105;
                         echo "                    \$object->" . ($prop['property']) . " = \$array[";
                         var_export($prop['property']);
                         echo "];\n";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 100;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 106;
                     }
                     else {
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 101;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 107;
                         echo "                    write_property(\$object, ";
                         var_export($prop['property']);
                         echo ", \$array[";
                         var_export($prop['property']);
                         echo "]);\n";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 102;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 108;
                     }
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 103;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 109;
                     if ($prop->has('Required')) {
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 104;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 110;
                         echo "                } else {\n                    throw new \\EasySerializer\\Exception\\MissingProperty(";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 105;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 111;
                         var_export($class);
                         echo ", ";
                         var_export($prop['property']);
                         echo ");\n";
-                        $line_54a9a40410b2b[$_54a9a40410b2b] = 106;
+                        $line_54ab45ff6972f[$_54ab45ff6972f] = 112;
                     }
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 107;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 113;
                     echo "                }\n";
-                    $line_54a9a40410b2b[$_54a9a40410b2b] = 108;
+                    $line_54ab45ff6972f[$_54ab45ff6972f] = 114;
                 }
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 109;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 115;
                 echo "            break;\n";
-                $line_54a9a40410b2b[$_54a9a40410b2b] = 110;
+                $line_54ab45ff6972f[$_54ab45ff6972f] = 116;
             }
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 111;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 117;
             echo "        default:\n            throw new \\InvalidArgumentException(\"Cannot find serializer for class \" . get_class(\$obj));\n        }\n\n        return \$object;\n    }\n}\n\n";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 119;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 125;
             echo substr($validator->getCode(), 5) . "\n\nreturn new \\";
-            $line_54a9a40410b2b[$_54a9a40410b2b] = 121;
+            $line_54ab45ff6972f[$_54ab45ff6972f] = 127;
             echo $ns . "\\Serializer;\n";
 
-            array_pop($file_54a9a40410b2b);
+            array_pop($file_54ab45ff6972f);
 
             if ($return) {
                 return ob_get_clean();
@@ -298,15 +313,15 @@ namespace EasySerializer {
 
         public function getSimpleViewTrace()
         {
-            global $file_54a9a40410b2b, $line_54a9a40410b2b;
+            global $file_54ab45ff6972f, $line_54ab45ff6972f;
 
             $traces = $this->e->getTrace();
             $i = 0;
             foreach ($traces as &$trace) {
                 if (!empty($trace['file'])
-                    && $trace['file'] == $this->file && !empty($file_54a9a40410b2b[$i])) {
-                    $trace['file'] = $file_54a9a40410b2b[$i];
-                    $trace['line'] = $line_54a9a40410b2b[$i];
+                    && $trace['file'] == $this->file && !empty($file_54ab45ff6972f[$i])) {
+                    $trace['file'] = $file_54ab45ff6972f[$i];
+                    $trace['line'] = $line_54ab45ff6972f[$i];
                     ++$i;
                 }
                 if (empty($trace['file'])) {

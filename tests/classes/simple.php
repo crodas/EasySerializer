@@ -22,4 +22,7 @@ class Something
 
     /** @Object("SomethingElse") */
     public $obj;
+
+    /** @Base64 */
+    public $binary;
 }
