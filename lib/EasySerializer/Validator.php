@@ -46,6 +46,7 @@ class Validator extends Init
     public function setClass(Array $annotations)
     {
         $this->annotations = $annotations;
+        $this->ns = 'x' . uniqid(true);
     }
 
     public function getAnnotations()
